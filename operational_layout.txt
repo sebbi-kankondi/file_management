@@ -1,0 +1,127 @@
+Operational layout for the automated file management project
+===========================================================
+
+Purpose
+-------
+Automatically relocate new items from the laptop's Downloads folder into destination folders based on filename patterns and extensions, keeping Downloads clean and the wider file system organized.
+
+Programs and their roles
+------------------------
+1) Python 3 runtime
+   - Runs the orchestration script that discovers new files, classifies them by name/extension, and executes moves.
+   - Standard libraries used:
+     • pathlib / os: interact with filesystem paths and metadata.
+     • shutil: move files atomically where possible.
+     • logging: write structured logs for every action and error.
+     • fnmatch / re: evaluate filename patterns.
+     • json / yaml (optional): read rule configuration.
+
+2) Configuration file (JSON or YAML)
+   - Stores mapping rules without code changes. Example keys: extensions, filename keywords, destination paths, conflict strategy, ignored patterns.
+   - Allows quick edits (e.g., add `.csv -> ~/Data/Imports`).
+
+3) Scheduler (platform-specific)
+   - macOS/Linux: launchd or cron job running the Python entrypoint on a fixed interval (e.g., every 5 minutes).
+   - Windows: Task Scheduler with a trigger on logon and a repeating interval.
+   - Ensures automation without manual runs.
+
+4) Optional notifier (e.g., macOS `osascript`, Windows Toast, or email via `smtplib`)
+   - Sends a summary of moved files and any errors after each run or once per day.
+
+5) Optional checksum utility (hashlib within Python)
+   - Verifies file integrity before deleting temporary copies when moves cross devices.
+
+Operational flow
+----------------
+1) Initialization
+   - Load configuration (rule set, destinations, ignore list, dry-run flag, logging level, notification preference).
+   - Expand user paths to absolute locations (e.g., `~/Downloads`).
+
+2) Discovery
+   - Scan Downloads for files (optionally skip files younger than N minutes to avoid moving actively-downloading items).
+   - Skip items matching ignore patterns (e.g., `.part`, `.crdownload`, temporary office files).
+
+3) Classification
+   - Evaluate rules in priority order:
+     • Exact extension matches (e.g., `.pdf -> ~/Documents/Manuals`).
+     • Filename keywords/regex (e.g., names containing "invoice" -> `~/Finance/Invoices`).
+     • Fallback routes (e.g., archives -> `~/Archives`, media -> `~/Media`).
+   - Default rule: move uncategorized files to `~/Downloads/Unsorted` or prompt for manual placement (optional interactive mode).
+
+4) Destination preparation
+   - Create destination directories if missing.
+   - Optionally mirror year/month subfolders for dated filing (e.g., `~/Finance/Invoices/2024/09`).
+
+5) Move and rename
+   - Move files using `shutil.move`. If crossing filesystems, copy then delete after checksum verification.
+   - Handle name collisions by applying a strategy (e.g., append timestamp or incremental counter).
+   - Preserve original timestamps when desired (`shutil.copystat`).
+
+6) Logging and audit
+   - Write logs to `~/.local/state/file_mover.log` (or `%APPDATA%\FileMover\logs`).
+   - Record: timestamp, source, destination, rule matched, action (moved/skipped), duration, errors.
+
+7) Notifications (optional)
+   - Summarize actions (counts per category, failures) via desktop notification or email.
+
+8) Safety and recovery
+   - Dry-run mode to preview actions without moving files.
+   - Keep a small quarantine/rollback folder for unexpected moves.
+   - Respect permissions; skip unreadable files and log.
+
+Directory layout suggestions
+----------------------------
+- Source: `~/Downloads`
+- Destinations (examples; adjust in config):
+  • `~/Documents` (pdf/doc/txt/markdown)
+  • `~/Pictures` (jpg/png/heic)
+  • `~/Videos` (mp4/mkv/mov)
+  • `~/Music` (mp3/flac/wav)
+  • `~/Code` (zip/tar.gz/git-related)
+  • `~/Finance/Invoices` (invoice receipts)
+  • `~/Data` (csv/xlsx/json)
+  • `~/Archives` (zip/rar/7z backups)
+  • `~/Downloads/Unsorted` (catch-all)
+
+Example rule snippet (YAML)
+---------------------------
+```yaml
+sources:
+  - ~/Downloads
+rules:
+  - match: extension
+    values: ["pdf", "docx", "txt", "md"]
+    dest: ~/Documents
+  - match: name_contains
+    values: ["invoice", "receipt"]
+    dest: ~/Finance/Invoices
+  - match: extension
+    values: ["jpg", "jpeg", "png", "heic"]
+    dest: ~/Pictures
+  - match: extension
+    values: ["zip", "rar", "7z", "tar", "gz"]
+    dest: ~/Archives
+  - match: extension
+    values: ["mp4", "mkv", "mov"]
+    dest: ~/Videos
+  - match: extension
+    values: ["mp3", "flac", "wav"]
+    dest: ~/Music
+  - match: any
+    dest: ~/Downloads/Unsorted
+options:
+  skip_if_locked: true
+  min_age_minutes: 2
+  on_conflict: append_timestamp
+  dry_run: false
+  log_file: ~/.local/state/file_mover.log
+```
+
+Deployment checklist
+--------------------
+- Install Python 3 and (optionally) a virtual environment.
+- Place the Python script and configuration file in a consistent location (e.g., `~/file_mover`).
+- Test a dry run locally; confirm destination paths and naming collision behavior.
+- Register the scheduler entry (cron/launchd/Task Scheduler) to run at the desired interval.
+- Enable notifications if desired; verify log file creation and permissions.
+- Periodically review logs and adjust rules as new file types appear.
