@@ -1,0 +1,36 @@
+sources:
+  - ~/Downloads
+
+rules:
+  - match: extension
+    values: ["pdf", "docx", "txt", "md"]
+    dest: ~/Documents
+  - match: name_contains
+    values: ["invoice", "receipt"]
+    dest: ~/Finance/Invoices
+  - match: extension
+    values: ["jpg", "jpeg", "png", "heic"]
+    dest: ~/Pictures
+  - match: extension
+    values: ["zip", "rar", "7z", "tar", "gz"]
+    dest: ~/Archives
+  - match: extension
+    values: ["mp4", "mkv", "mov"]
+    dest: ~/Videos
+  - match: extension
+    values: ["mp3", "flac", "wav"]
+    dest: ~/Music
+  - match: any
+    values: ["*"]
+    dest: ~/Downloads/Unsorted
+
+options:
+  skip_if_locked: true
+  min_age_minutes: 2
+  on_conflict: append_timestamp
+  dry_run: false
+  log_file: ~/.local/state/file_mover.log
+  ignore_patterns: [".part", ".crdownload", "~$", ".tmp"]
+  year_month_subfolders: false
+  quarantine_dir: ~/Downloads/Quarantine
+  verify_checksum: true
