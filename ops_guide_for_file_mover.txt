@@ -72,7 +72,7 @@ Operational flow
 Directory layout suggestions
 ----------------------------
 - Source: `~/Downloads`
-- Destinations (examples; adjust in config):
+- Destinations (examples; adjust in configuration file):
   • `~/Documents` (pdf/doc/txt/markdown)
   • `~/Pictures` (jpg/png/heic)
   • `~/Videos` (mp4/mkv/mov)
