@@ -1,8 +1,9 @@
 sources:
   - ~/Downloads
-#Order of these rules matter
-# "g" for goods and "s" for services
+# Order of these rules matters: first matching rule wins, so keep specific name-based rules above broad extension rules.
+# Naming convention: "g" = goods and "s" = services for procurement document prefixes.
 rules:
+  # Procurement document routing: explicit keyword rules map known forms to their working folders.
   - match: name_contains
     values: ["diving_gear_g_invoice", "phone_g_invoice", "feed_g_invoice", "lss_plumbing_g_invoice", 
      "sound_g_invoice", "fuel_g_invoice", "chem_g_invoice", "hpw_g_invoice", "ppe_g_invoice", "aquaria_g_invoice", 
@@ -148,10 +149,7 @@ rules:
   - match: name_contains
     values: ["procurement_register"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_procurement_register
-  - match: extension
-    values: ["pdf", "docx", "txt", "md",
-     "jpg", "jpeg", "png", "heic"]
-    dest: ~/Documents
+  # Generic extension-based fallbacks run after keyword rules for uncategorized files.
   - match: extension
     values: ["jpg", "jpeg", "png", "heic"]
     dest: ~/Pictures
@@ -164,6 +162,7 @@ rules:
   - match: extension
     values: ["mp3", "flac", "wav"]
     dest: ~/Music
+  # Final safety net: anything unmatched goes to Unsorted for manual review.
   - match: any
     values: ["*"]
     dest: ~/Downloads/Unsorted
