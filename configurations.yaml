@@ -1,5 +1,5 @@
 sources:
-  - ~/Downloads
+  - C:\Users\Sebbi Kankondi\Downloads
 # Order of these rules matters: first matching rule wins, so keep specific name-based rules above broad extension rules.
 # Naming convention: "g" = goods and "s" = services for procurement document prefixes.
 rules:
@@ -29,7 +29,7 @@ rules:
   # Motivations are now only needed for special training/travel, standby and reimbursement requests . Put in SOPs later.
   - match: name_contains
     values: ["standby_motivation", "reimbursement_motivation", "travel_motivation"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_motivation\office
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_motivations\office
   - match: name_contains
     values: ["training_s_motivation"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_motivation\service
