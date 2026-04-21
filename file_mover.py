@@ -184,6 +184,7 @@ def discover_files(config: FileMoverConfig) -> List[Path]:
 
     candidates: List[Path] = []
     for source in config.sources:
+        # Missing source folders are ignored so optional paths do not break a run.
         if not source.exists():
             continue
         for item in source.iterdir():
@@ -263,9 +264,11 @@ class FileMover:
         parent = dest.parent
 
         if strategy == "append_timestamp":
+            # Keep the original name and append a sortable timestamp suffix.
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             return parent / f"{stem}_{timestamp}{suffix}"
 
+        # Fallback strategy: increment an integer suffix until a free filename is found.
         counter = 1
         while True:
             candidate = parent / f"{stem}_{counter}{suffix}"
@@ -286,9 +289,11 @@ class FileMover:
         src_dev = src.stat().st_dev
         dest_dev = dest.parent.stat().st_dev
         if src_dev == dest_dev:
+            # A direct rename/move is atomic when source and destination are on the same device.
             shutil.move(str(src), str(dest))
             return
 
+        # Cross-device moves are performed as copy + verify + replace to avoid partial transfers.
         temp_dest = dest.with_suffix(dest.suffix + ".tmp")
         shutil.copy2(src, temp_dest)
 
@@ -336,6 +341,7 @@ class FileMover:
                 results.append(record)
             except Exception as exc:  # pragma: no cover - runtime safeguard
                 duration = time.time() - start
+                # Failed files are moved to quarantine for later inspection instead of being left in-place.
                 quarantine_target = self.config.options.quarantine_dir / file_path.name
                 quarantine_target.parent.mkdir(parents=True, exist_ok=True)
                 if not self.config.options.dry_run and file_path.exists():
