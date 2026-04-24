@@ -15,6 +15,9 @@ rules:
      "windows_s_invoice", "tools_s_invoice"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_invoice\service
   - match: name_contains
+    values: ["_policy", "_act"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\acts_and_policies
+  - match: name_contains
     values: ["cameras_g_quote", "camping_g_quote", "feed_g_quote", "lss_plumbing_g_quote", 
      "office_equipment_g_quote", "display_equipment_g_quote", "fuel_g_quote", "chem_g_quote", "hpw_g_quote", "ppe_g_quote", "aquaria_g_quote", 
      "wqmeter_g_quote", "clean_mat_g_quote", "clean_equip_g_quote", "dehumidifier_g_quote",
