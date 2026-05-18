@@ -18,6 +18,24 @@ rules:
     values: ["_policy", "_act"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\acts_and_policies
   - match: name_contains
+    values: ["natmirc_minutes"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\committee_docs\natmirc_management_meeting_minutes
+  - match: name_contains
+    values: ["mtc_agenda"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\committee_docs\ministerial_training_committee\agendas
+  - match: name_contains
+    values: ["mtc_application"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\committee_docs\ministerial_training_committee\applications
+  - match: name_contains
+    values: ["mtc_committee"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\committee_docs\ministerial_training_committee\committee
+  - match: name_contains
+    values: ["mtc_minutes"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\committee_docs\ministerial_training_committee\minutes
+  - match: name_contains
+    values: ["annual_plan", "awp"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\ministry_annual_plan
+  - match: name_contains
     values: ["cameras_g_quote", "camping_g_quote", "feed_g_quote", "lss_plumbing_g_quote", 
      "office_equipment_g_quote", "display_equipment_g_quote", "fuel_g_quote", "chem_g_quote", "hpw_g_quote", "ppe_g_quote", "aquaria_g_quote", 
      "wqmeter_g_quote", "clean_mat_g_quote", "clean_equip_g_quote", "dehumidifier_g_quote",
@@ -50,7 +68,8 @@ rules:
     values: ["bid_oab", "bid_epe", "bid_rfq", "bid_dp", "bid_epe", "bid_rb"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\bidding_documents
   - match: name_contains
-    values: ["request_oab", "request_epe", "request_rfq", "request_dp", "request_epe", "request_rb"]
+    values: ["request_oab", "request_epe", "request_rfq", "request_dp",
+     "request_epe", "request_rb", "requisition_form"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\request_lists
   - match: name_contains
     values: ["vendor_accreditations"]
@@ -144,14 +163,31 @@ rules:
      "hpw_specs", "office_equipment_specs", "display_equipment_specs"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_lists_specs\service
   - match: name_contains
-    values: ["cap_directive", "cap_bid_doc", "cap_contract", "cap_correspondence",
-     "cap_quote", "cap_specs", "feas_report", "feas_image", "feas_annex",
-     "floor_plan", "cap_minutes", "internal_cap_protocol", "cap_proposal", 
-     "cap_quote", "cap_list", "cap_meet_minutes"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\capital_projects
+    values: ["cap_meet_minutes", "cap_review"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\capital_projects\feasibility_reviews
+     - match: name_contains
+    values: ["cap_quote", "cap_specs", "feas_report", "feas_image", "feas_annex",
+     "floor_plan", "cap_minutes", "cap_proposal", 
+      "cap_list"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\capital_projects\feasibility_studies
+     - match: name_contains
+    values: ["internal_cap_protocol"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\capital_projects\tank_drain_protocol
+     - match: name_contains
+    values: ["cap_directive", "cap_bid_doc", "cap_contract", "cap_correspondence"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\capital_projects\bidding_documents
   - match: name_contains
     values: ["procurement_register"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_procurement_register
+  - match: name_contains
+    values: ["gov_jobs"]
+    dest: C:\Users\Sebbi Kankondi\Documents\JB\JobAds\NamGovt
+  - match: name_contains
+    values: ["_installer"]
+    dest: C:\Users\Sebbi Kankondi\Desktop\important_installers
+  - match: name_contains
+    values: ["med_aid"]
+    dest: C:\Users\Sebbi Kankondi\Documents\JB\Job_positions\Government\MFMR\chief_research_tech\medical_aid
   # Generic extension-based fallbacks run after keyword rules for uncategorized files.
   - match: extension
     values: ["jpg", "jpeg", "png", "heic"]
