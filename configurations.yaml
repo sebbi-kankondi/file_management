@@ -165,15 +165,15 @@ rules:
   - match: name_contains
     values: ["cap_meet_minutes", "cap_review"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\capital_projects\feasibility_reviews
-     - match: name_contains
+  - match: name_contains
     values: ["cap_quote", "cap_specs", "feas_report", "feas_image", "feas_annex",
      "floor_plan", "cap_minutes", "cap_proposal", 
       "cap_list"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\capital_projects\feasibility_studies
-     - match: name_contains
+  - match: name_contains
     values: ["internal_cap_protocol"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\capital_projects\tank_drain_protocol
-     - match: name_contains
+  - match: name_contains
     values: ["cap_directive", "cap_bid_doc", "cap_contract", "cap_correspondence"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\capital_projects\bidding_documents
   - match: name_contains
