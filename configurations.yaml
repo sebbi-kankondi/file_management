@@ -70,7 +70,7 @@ rules:
   - match: name_contains
     values: ["request_oab", "request_epe", "request_rfq", "request_dp",
      "request_epe", "request_rb"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\procurement_method_requests
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\request_lists
   - match: name_contains
     values: ["_template"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\templates
