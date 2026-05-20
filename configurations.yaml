@@ -69,8 +69,10 @@ rules:
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\bidding_documents
   - match: name_contains
     values: ["request_oab", "request_epe", "request_rfq", "request_dp",
-     "request_epe", "request_rb", "requisition_form"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\request_lists
+     "request_epe", "request_rb"]
+  - match: name_contains
+    values: ["_templste"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\templates
   - match: name_contains
     values: ["vendor_accreditations"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\vendor_documents\accreditations
