@@ -72,6 +72,9 @@ rules:
      "request_epe", "request_rb"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\request_lists
   - match: name_contains
+    values: ["_cv"]
+    dest: C:\Users\Sebbi Kankondi\Documents\JB\CVs\personal
+  - match: name_contains
     values: ["_template"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\templates
   - match: name_contains
@@ -191,6 +194,18 @@ rules:
   - match: name_contains
     values: ["med_aid"]
     dest: C:\Users\Sebbi Kankondi\Documents\JB\Job_positions\Government\MFMR\chief_research_tech\medical_aid
+  - match: name_contains
+    values: ["gov_contacts"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Aquarium Staff\Performance Agreements\mfmr_organogram\mfmr_contacts
+  - match: name_contains
+    values: ["declaration_interest"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\declarations
+  - match: name_contains
+    values: ["bank_confirmation", "_payslip", "_statement", "_PAYE5"]
+    dest: C:\Users\Sebbi Kankondi\Documents\Admin\finance
+  - match: name_contains
+    values: ["_Circular", "_Vacancies", "Notice_board"]
+    dest: C:\Users\Sebbi Kankondi\Documents\JB\JobAds\NamGovt
   # Generic extension-based fallbacks run after keyword rules for uncategorized files.
   - match: extension
     values: ["jpg", "jpeg", "png", "heic"]
