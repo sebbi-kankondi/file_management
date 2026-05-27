@@ -140,7 +140,7 @@ rules:
     values: ["requirements_oab", "requirements_epe", "requirements_rfq", "requirements_dp", "requirements_epe", "requirements_rb"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\procurement_method_requirements
   - match: name_contains
-    values: ["APP_vote"]
+    values: ["APP_vote", "procurement_questions"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\Budget\APP
   - match: name_contains
     values: ["FDC_vote"]
@@ -206,6 +206,9 @@ rules:
   - match: name_contains
     values: ["_Circular", "_Vacancies", "Notice_board"]
     dest: C:\Users\Sebbi Kankondi\Documents\JB\JobAds\NamGovt
+  - match: name_contains
+    values: ["stock_assessment", "TAC_report"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\fisheries_reports\tac
   # Generic extension-based fallbacks run after keyword rules for uncategorized files.
   - match: extension
     values: ["jpg", "jpeg", "png", "heic"]
