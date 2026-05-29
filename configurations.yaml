@@ -215,6 +215,9 @@ rules:
   - match: name_contains
     values: ["business_plan_reports"]
     dest: C:\Users\Sebbi Kankondi\Documents\Admin\business_docs\plan\molenzicht_r2o\bussines_plan_reports
+  - match: name_contains
+    values: ["pms_PA", "pms_Q1", "pms_Q2", "pms_Q3", "pms_Q4", "pms_AA"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Aquarium Staff\Performance Agreements
   # Generic extension-based fallbacks run after keyword rules for uncategorized files.
   - match: extension
     values: ["jpg", "jpeg", "png", "heic"]
