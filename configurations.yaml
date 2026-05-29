@@ -186,9 +186,6 @@ rules:
     values: ["procurement_register"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_procurement_register
   - match: name_contains
-    values: ["gov_jobs"]
-    dest: C:\Users\Sebbi Kankondi\Documents\JB\JobAds\NamGovt
-  - match: name_contains
     values: ["_installer"]
     dest: C:\Users\Sebbi Kankondi\Desktop\important_installers
   - match: name_contains
@@ -209,6 +206,15 @@ rules:
   - match: name_contains
     values: ["stock_assessment", "TAC_report"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\fisheries_reports\tac
+  - match: name_contains
+    values: ["for_me"]
+    dest: C:\Users\Sebbi Kankondi\Documents\legal\cases_for_me
+  - match: name_contains
+    values: ["against_me"]
+    dest: C:\Users\Sebbi Kankondi\Documents\legal\cases_against_me
+  - match: name_contains
+    values: ["business_plan_reports"]
+    dest: C:\Users\Sebbi Kankondi\Documents\Admin\business_docs\plan\molenzicht_r2o\bussines_plan_reports
   # Generic extension-based fallbacks run after keyword rules for uncategorized files.
   - match: extension
     values: ["jpg", "jpeg", "png", "heic"]
