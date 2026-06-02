@@ -218,6 +218,9 @@ rules:
   - match: name_contains
     values: ["pms_PA", "pms_Q1", "pms_Q2", "pms_Q3", "pms_Q4", "pms_AA"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Aquarium Staff\Performance Agreements
+  - match: name_contains
+    values: ["driver_contract"]
+    dest: C:\Users\Sebbi Kankondi\Documents\property\transport_fleet\rules_and_agreements
   # Generic extension-based fallbacks run after keyword rules for uncategorized files.
   - match: extension
     values: ["jpg", "jpeg", "png", "heic"]
