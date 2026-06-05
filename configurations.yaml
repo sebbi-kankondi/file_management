@@ -221,6 +221,9 @@ rules:
   - match: name_contains
     values: ["driver_contract"]
     dest: C:\Users\Sebbi Kankondi\Documents\property\transport_fleet\rules_and_agreements
+  - match: name_contains
+    values: ["personal_invoice"]
+    dest: C:\Users\Sebbi Kankondi\Documents\Admin\finance
   # Generic extension-based fallbacks run after keyword rules for uncategorized files.
   - match: extension
     values: ["jpg", "jpeg", "png", "heic"]
