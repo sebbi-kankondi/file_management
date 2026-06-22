@@ -21,6 +21,9 @@ rules:
     values: ["natmirc_minutes"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\committee_docs\natmirc_management_meeting_minutes
   - match: name_contains
+    values: ["pc_minutes"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\committee_docs\procurement_comm_meeting_minutes
+  - match: name_contains
     values: ["mtc_agenda"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\committee_docs\ministerial_training_committee\agendas
   - match: name_contains
@@ -204,7 +207,7 @@ rules:
     values: ["_Circular", "_Vacancies", "Notice_board"]
     dest: C:\Users\Sebbi Kankondi\Documents\JB\JobAds\NamGovt
   - match: name_contains
-    values: ["stock_assessment", "TAC_report"]
+    values: ["stock_assessment", "TAC_report", "cruise_report"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\fisheries_reports\tac
   - match: name_contains
     values: ["for_me"]
@@ -222,7 +225,7 @@ rules:
     values: ["driver_contract"]
     dest: C:\Users\Sebbi Kankondi\Documents\property\transport_fleet\rules_and_agreements
   - match: name_contains
-    values: ["personal_invoice"]
+    values: ["personal_invoice","personal_receipt", "personal_qoute"]
     dest: C:\Users\Sebbi Kankondi\Documents\Admin\finance
   # Generic extension-based fallbacks run after keyword rules for uncategorized files.
   - match: extension
