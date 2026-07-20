@@ -39,24 +39,21 @@ rules:
     values: ["annual_plan", "awp"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\ministry_annual_plan
   - match: name_contains
-    values: ["cameras_g_quote", "camping_g_quote", "feed_g_quote", "lss_plumbing_g_quote", 
-     "office_equipment_g_quote", "display_equipment_g_quote", "fuel_g_quote", "chem_g_quote", "hpw_g_quote", "ppe_g_quote", "aquaria_g_quote", 
-     "wqmeter_g_quote", "clean_mat_g_quote", "clean_equip_g_quote", "dehumidifier_g_quote",
-      "fishing_g_quote", "printer_g_quote", "stand_aquarium_g_quote", "gen_plumbing_g_quote", "sound_g_quote", "phone_g_quote", 
-       "tools_g_quote", "pumps_g_quote", "lab_g_quote", "lsselectronics_g_quote", "lsselectronics_g_quote"]
+    values: ["g_quote"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_quote\goods
   - match: name_contains
-    values: ["office_equipment_s_quote", "display_equipment_s_quote", "diving_gear_s_quote", "lssdiving_s_quote", "generator_s_quote", "hpw_s_quote", 
-     "hvac_s_quote", "lsselectronics_s_quote", "lssplumbing_s_quote", "gen_plumbing_s_quote", "pumps_s_quote", 
-     "training_s_quote", "transport_s_quote", "windows_s_quote", "tools_s_quote", "sound_s_quote"]
+    values: ["s_quote"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_quote\service
   # Motivations are now only needed for special training/travel, standby and reimbursement requests . Put in SOPs later.
   - match: name_contains
     values: ["standby_motivation", "reimbursement_motivation", "travel_motivation"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_motivations\office
   - match: name_contains
-    values: ["training_s_motivation"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_motivation\service
+    values: ["training_s_motivation", "freezer_s_motivation"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_motivations\service
+  - match: name_contains
+    values: ["feed_g_motivation"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_motivations\goods
   # Approvals are now only needed for special training/travel, standby and reimbursement requests . Put in SOPs later.
   - match: name_contains
     values: ["standby_approval", "reimbursement_approval", "travel_approval"]
@@ -219,14 +216,24 @@ rules:
     values: ["business_plan_reports"]
     dest: C:\Users\Sebbi Kankondi\Documents\Admin\business_docs\plan\molenzicht_r2o\bussines_plan_reports
   - match: name_contains
-    values: ["pms_PA", "pms_Q1", "pms_Q2", "pms_Q3", "pms_Q4", "pms_AA"]
+    values: ["_pension"]
+    dest: C:\Users\Sebbi Kankondi\Documents\Admin\business_docs\staff  
+  - match: name_contains
+    values: ["pms_PA", "pms_Q1", "pms_Q2", "pms_Q3", 
+      "pms_Q4", "pms_AA", "disability_consideration", "leave_application"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Aquarium Staff\Performance Agreements
   - match: name_contains
     values: ["driver_contract"]
     dest: C:\Users\Sebbi Kankondi\Documents\property\transport_fleet\rules_and_agreements
   - match: name_contains
-    values: ["personal_invoice","personal_receipt", "personal_qoute"]
+    values: ["personal_invoice","personal_receipt", "personal_quote"]
     dest: C:\Users\Sebbi Kankondi\Documents\Admin\finance
+  - match: name_contains
+    values: ["most_accommodation","most_Itinerary", "most_travel", "most_claims"]
+    dest: C:\Users\Sebbi Kankondi\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\admin
+  - match: name_contains
+    values: ["most_read"]
+    dest: C:\Users\Sebbi Kankondi\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\reading_pdfs
   # Generic extension-based fallbacks run after keyword rules for uncategorized files.
   - match: extension
     values: ["jpg", "jpeg", "png", "heic"]
