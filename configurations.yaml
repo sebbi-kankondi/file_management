@@ -5,14 +5,10 @@ sources:
 rules:
   # Procurement document routing: explicit keyword rules map known forms to their working folders.
   - match: name_contains
-    values: ["diving_gear_g_invoice", "phone_g_invoice", "feed_g_invoice", "lss_plumbing_g_invoice", 
-     "sound_g_invoice", "fuel_g_invoice", "chem_g_invoice", "hpw_g_invoice", "ppe_g_invoice", "aquaria_g_invoice", 
-     "wqmeter_g_invoice", "tools_g_invoice"]
+    values: ["g_invoice"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_invoice\goods
   - match: name_contains
-    values: ["office_equipment_s_invoice", "display_equipment_s_invoice", "diving_gear_s_invoice", "lssdiving_s_invoice", "generator_s_invoice", "hpw_s_invoice", 
-     "hvac_s_invoice", "lsselectronics_s_invoice", "lssplumbing_s_invoice", "gen_plumbing_s_invoice", "pumps_s_invoice", "training_s_invoice", "transport_s_invoice", 
-     "windows_s_invoice", "tools_s_invoice"]
+    values: ["s_invoice"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_invoice\service
   - match: name_contains
     values: ["_policy", "_act"]
@@ -160,8 +156,8 @@ rules:
      "fishing_list", "lab_list", "workshop_list"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_lists_specs\goods
   - match: name_contains
-    values: ["accredited_institutes", "course_outline", "application_form", "course_fee",
-     "course_calendar", "training_notes", "training_report", "training_present"]
+    values: ["accredited_institutes", "course_outline", "course_brochure", "application_form", "course_fee",
+     "course_calendar", "training_notes", "training_report", "training_present", "skills_list"]
     dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\Training
   - match: name_contains
     values: ["lssplumbing_s_list", "genplumbing_s_list", "pump_s_list", "clean_equip_s_list",
@@ -216,6 +212,9 @@ rules:
     values: ["business_plan_reports"]
     dest: C:\Users\Sebbi Kankondi\Documents\Admin\business_docs\plan\molenzicht_r2o\bussines_plan_reports
   - match: name_contains
+    values: ["business_registration"]
+    dest: C:\Users\Sebbi Kankondi\Documents\Admin\business_docs\registration
+  - match: name_contains
     values: ["_pension"]
     dest: C:\Users\Sebbi Kankondi\Documents\Admin\business_docs\staff  
   - match: name_contains
@@ -229,8 +228,15 @@ rules:
     values: ["personal_invoice","personal_receipt", "personal_quote"]
     dest: C:\Users\Sebbi Kankondi\Documents\Admin\finance
   - match: name_contains
-    values: ["most_accommodation","most_Itinerary", "most_travel", "most_claims"]
+    values: ["most_accommodation","most_Itinerary", 
+      "most_travel", "most_claims", "most_indemnity"]
     dest: C:\Users\Sebbi Kankondi\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\admin
+  - match: name_contains
+    values: ["most_equipment"]
+    dest: C:\Users\Sebbi Kankondi\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\equipment
+  - match: name_contains
+    values: ["most_design"]
+    dest: C:\Users\Sebbi Kankondi\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\study_design
   - match: name_contains
     values: ["most_read"]
     dest: C:\Users\Sebbi Kankondi\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\reading_pdfs
