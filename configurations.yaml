@@ -1,239 +1,245 @@
 sources:
-  - C:\Users\Sebbi Kankondi\Downloads
+  - C:\Users\SebbyKa\Downloads
 # Order of these rules matters: first matching rule wins, so keep specific name-based rules above broad extension rules.
 # Naming convention: "g" = goods and "s" = services for procurement document prefixes.
 rules:
   # Procurement document routing: explicit keyword rules map known forms to their working folders.
   - match: name_contains
-    values: ["diving_gear_g_invoice", "phone_g_invoice", "feed_g_invoice", "lss_plumbing_g_invoice", 
-     "sound_g_invoice", "fuel_g_invoice", "chem_g_invoice", "hpw_g_invoice", "ppe_g_invoice", "aquaria_g_invoice", 
-     "wqmeter_g_invoice", "tools_g_invoice"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_invoice\goods
+    values: ["g_invoice"]
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_invoice\goods
   - match: name_contains
-    values: ["office_equipment_s_invoice", "display_equipment_s_invoice", "diving_gear_s_invoice", "lssdiving_s_invoice", "generator_s_invoice", "hpw_s_invoice", 
-     "hvac_s_invoice", "lsselectronics_s_invoice", "lssplumbing_s_invoice", "gen_plumbing_s_invoice", "pumps_s_invoice", "training_s_invoice", "transport_s_invoice", 
-     "windows_s_invoice", "tools_s_invoice"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_invoice\service
+    values: ["s_invoice"]
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_invoice\service
   - match: name_contains
     values: ["_policy", "_act"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\acts_and_policies
+    dest: C:\Users\SebbyKa\Documents\NNMA\high_level_documents\acts_and_policies
   - match: name_contains
     values: ["natmirc_minutes"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\committee_docs\natmirc_management_meeting_minutes
+    dest: C:\Users\SebbyKa\Documents\NNMA\high_level_documents\committee_docs\natmirc_management_meeting_minutes
   - match: name_contains
     values: ["pc_minutes"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\committee_docs\procurement_comm_meeting_minutes
+    dest: C:\Users\SebbyKa\Documents\NNMA\high_level_documents\committee_docs\procurement_comm_meeting_minutes
   - match: name_contains
     values: ["mtc_agenda"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\committee_docs\ministerial_training_committee\agendas
+    dest: C:\Users\SebbyKa\Documents\NNMA\high_level_documents\committee_docs\ministerial_training_committee\agendas
   - match: name_contains
     values: ["mtc_application"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\committee_docs\ministerial_training_committee\applications
+    dest: C:\Users\SebbyKa\Documents\NNMA\high_level_documents\committee_docs\ministerial_training_committee\applications
   - match: name_contains
     values: ["mtc_committee"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\committee_docs\ministerial_training_committee\committee
+    dest: C:\Users\SebbyKa\Documents\NNMA\high_level_documents\committee_docs\ministerial_training_committee\committee
   - match: name_contains
     values: ["mtc_minutes"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\committee_docs\ministerial_training_committee\minutes
+    dest: C:\Users\SebbyKa\Documents\NNMA\high_level_documents\committee_docs\ministerial_training_committee\minutes
   - match: name_contains
     values: ["annual_plan", "awp"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\ministry_annual_plan
+    dest: C:\Users\SebbyKa\Documents\NNMA\high_level_documents\ministry_annual_plan
   - match: name_contains
     values: ["g_quote"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_quote\goods
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_quote\goods
   - match: name_contains
     values: ["s_quote"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_quote\service
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_quote\service
   # Motivations are now only needed for special training/travel, standby and reimbursement requests . Put in SOPs later.
   - match: name_contains
     values: ["standby_motivation", "reimbursement_motivation", "travel_motivation"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_motivations\office
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_motivations\office
   - match: name_contains
     values: ["training_s_motivation", "freezer_s_motivation"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_motivations\service
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_motivations\service
   - match: name_contains
     values: ["feed_g_motivation"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_motivations\goods
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_motivations\goods
   # Approvals are now only needed for special training/travel, standby and reimbursement requests . Put in SOPs later.
   - match: name_contains
     values: ["standby_approval", "reimbursement_approval", "travel_approval"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_approval\office
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_approval\office
   - match: name_contains
     values: ["training_s_approval"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_approval\service
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_approval\service
   - match: name_contains
     values: ["invitation", "nomination"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_invitations_nominations
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_invitations_nominations
   - match: name_contains
     values: ["bid_oab", "bid_epe", "bid_rfq", "bid_dp", "bid_epe", "bid_rb"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\bidding_documents
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\bidding_documents
   - match: name_contains
     values: ["request_oab", "request_epe", "request_rfq", "request_dp",
      "request_epe", "request_rb"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\request_lists
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\request_lists
   - match: name_contains
     values: ["_cv"]
-    dest: C:\Users\Sebbi Kankondi\Documents\JB\CVs\personal
+    dest: C:\Users\SebbyKa\Documents\JB\CVs\personal
   - match: name_contains
     values: ["_template"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\templates
+    dest: C:\Users\SebbyKa\Documents\NNMA\templates
   - match: name_contains
     values: ["vendor_accreditations"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\vendor_documents\accreditations
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\vendor_documents\accreditations
   - match: name_contains
     values: ["vendor_banking"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\vendor_documents\banking
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\vendor_documents\banking
   - match: name_contains
     values: ["vendor_good_standing"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\vendor_documents\good_standing
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\vendor_documents\good_standing
   - match: name_contains
     values: ["vendor_id"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\vendor_documents\id
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\vendor_documents\id
   - match: name_contains
     values: ["vendor_letterhead"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\vendor_documents\letterhead
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\vendor_documents\letterhead
   - match: name_contains
     values: ["vendor_profiles"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\vendor_documents\profiles
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\vendor_documents\profiles
   - match: name_contains
     values: ["vendor_recommendations"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\vendor_documents\recommendations
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\vendor_documents\recommendations
   # Issue voucher and job card are synonymous in our system
   - match: name_contains
     values: ["job_card", "issue_voucher"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_job_cards
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_job_cards
   - match: name_contains
     values: ["g_po"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_po\goods
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_po\goods
   - match: name_contains
     values: ["s_po"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_po\service
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_po\service
   - match: name_contains
     values: ["g_pop"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_pop\goods
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_pop\goods
   - match: name_contains
     values: ["s_pop"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_pop\service
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_pop\service
   - match: name_contains
     values: ["g_statement"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_statements\goods
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_statements\goods
   - match: name_contains
     values: ["s_statement"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_statements\service
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_statements\service
   - match: name_contains
     values: ["visa_app", "travel_agent", "dsa_form", "aot_form", "visa_procedure", 
      "dsa_procedure", "dsa_guidelines", "dsa_pssr", "dsa_rates"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_travel
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_travel
   - match: name_contains
     values: ["customs"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\customs_documents
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\customs_documents
   - match: name_contains
     values: ["pmu_report", "pmu_opening"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\pmu_reports
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\pmu_reports
   - match: name_contains
     values: ["procurement_act", "procurement_policy"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\procurement_documents\act
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\procurement_documents\act
   - match: name_contains
     values: ["procurement_directive", "procurement_memo"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\procurement_documents\directives
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\procurement_documents\directives
   - match: name_contains
     values: ["requirements_oab", "requirements_epe", "requirements_rfq", "requirements_dp", "requirements_epe", "requirements_rb"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\procurement_method_requirements
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\procurement_method_requirements
   - match: name_contains
     values: ["APP_vote", "procurement_questions"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\Budget\APP
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\Budget\APP
   - match: name_contains
     values: ["FDC_vote"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\Budget\FDC
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\Budget\FDC
   - match: name_contains
     values: ["MRF"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\Budget\MRF
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\Budget\MRF
   - match: name_contains
     values: ["budget_motivation", "budget_speech", "payment_checklist"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\Budget
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\Budget
   - match: name_contains
     values: ["foreign_pay"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\foreign_payments_requirements
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\foreign_payments_requirements
   - match: name_contains
     values: ["chemical_list", "ppe_list", "lssplumbing_g_list", "genplumbing_g_list", 
      "pump_g_list", "clean_equip_g_list", "clean_mat_list", "diving_gear_g_list", 
      "fishing_list", "lab_list", "workshop_list"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_lists_specs\goods
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_lists_specs\goods
   - match: name_contains
-    values: ["accredited_institutes", "course_outline", "application_form", "course_fee",
-     "course_calendar", "training_notes", "training_report", "training_present"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\Training
+    values: ["accredited_institutes", "course_outline", "course_brochure", "application_form", "course_fee",
+     "course_calendar", "training_notes", "training_report", "training_present", "skills_list"]
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\Training
   - match: name_contains
     values: ["lssplumbing_s_list", "genplumbing_s_list", "pump_s_list", "clean_equip_s_list",
      "diving_gear_s_list", "training_specs", "transport_specs", "hvac_specs", "generator_specs",
      "hpw_specs", "office_equipment_specs", "display_equipment_specs"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_lists_specs\service
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_lists_specs\service
   - match: name_contains
     values: ["cap_meet_minutes", "cap_review"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\capital_projects\feasibility_reviews
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\capital_projects\feasibility_reviews
   - match: name_contains
     values: ["cap_quote", "cap_specs", "feas_report", "feas_image", "feas_annex",
      "floor_plan", "cap_minutes", "cap_proposal", 
       "cap_list"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\capital_projects\feasibility_studies
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\capital_projects\feasibility_studies
   - match: name_contains
     values: ["internal_cap_protocol"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\capital_projects\tank_drain_protocol
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\capital_projects\tank_drain_protocol
   - match: name_contains
     values: ["cap_directive", "cap_bid_doc", "cap_contract", "cap_correspondence"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\capital_projects\bidding_documents
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\capital_projects\bidding_documents
   - match: name_contains
     values: ["procurement_register"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_procurement_register
+    dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_procurement_register
   - match: name_contains
     values: ["_installer"]
-    dest: C:\Users\Sebbi Kankondi\Desktop\important_installers
+    dest: C:\Users\SebbyKa\Desktop\important_installers
   - match: name_contains
     values: ["med_aid"]
-    dest: C:\Users\Sebbi Kankondi\Documents\JB\Job_positions\Government\MFMR\chief_research_tech\medical_aid
+    dest: C:\Users\SebbyKa\Documents\JB\Job_positions\Government\MFMR\chief_research_tech\medical_aid
   - match: name_contains
     values: ["gov_contacts"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Aquarium Staff\Performance Agreements\mfmr_organogram\mfmr_contacts
+    dest: C:\Users\SebbyKa\Documents\NNMA\Aquarium Staff\Performance Agreements\mfmr_organogram\mfmr_contacts
   - match: name_contains
     values: ["declaration_interest"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\high_level_documents\declarations
+    dest: C:\Users\SebbyKa\Documents\NNMA\high_level_documents\declarations
   - match: name_contains
     values: ["bank_confirmation", "_payslip", "_statement", "_PAYE5"]
-    dest: C:\Users\Sebbi Kankondi\Documents\Admin\finance
+    dest: C:\Users\SebbyKa\Documents\Admin\finance
   - match: name_contains
     values: ["_Circular", "_Vacancies", "Notice_board"]
-    dest: C:\Users\Sebbi Kankondi\Documents\JB\JobAds\NamGovt
+    dest: C:\Users\SebbyKa\Documents\JB\JobAds\NamGovt
   - match: name_contains
     values: ["stock_assessment", "TAC_report", "cruise_report"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\fisheries_reports\tac
+    dest: C:\Users\SebbyKa\Documents\NNMA\fisheries_reports\tac
   - match: name_contains
     values: ["for_me"]
-    dest: C:\Users\Sebbi Kankondi\Documents\legal\cases_for_me
+    dest: C:\Users\SebbyKa\Documents\legal\cases_for_me
   - match: name_contains
     values: ["against_me"]
-    dest: C:\Users\Sebbi Kankondi\Documents\legal\cases_against_me
+    dest: C:\Users\SebbyKa\Documents\legal\cases_against_me
   - match: name_contains
     values: ["business_plan_reports"]
-    dest: C:\Users\Sebbi Kankondi\Documents\Admin\business_docs\plan\molenzicht_r2o\bussines_plan_reports
+    dest: C:\Users\SebbyKa\Documents\Admin\business_docs\plan\molenzicht_r2o\bussines_plan_reports
+  - match: name_contains
+    values: ["business_registration"]
+    dest: C:\Users\SebbyKa\Documents\Admin\business_docs\registration
   - match: name_contains
     values: ["_pension"]
-    dest: C:\Users\Sebbi Kankondi\Documents\Admin\business_docs\staff  
+    dest: C:\Users\SebbyKa\Documents\Admin\business_docs\staff  
   - match: name_contains
     values: ["pms_PA", "pms_Q1", "pms_Q2", "pms_Q3", 
       "pms_Q4", "pms_AA", "disability_consideration", "leave_application"]
-    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Aquarium Staff\Performance Agreements
+    dest: C:\Users\SebbyKa\Documents\NNMA\Aquarium Staff\Performance Agreements
   - match: name_contains
     values: ["driver_contract"]
-    dest: C:\Users\Sebbi Kankondi\Documents\property\transport_fleet\rules_and_agreements
+    dest: C:\Users\SebbyKa\Documents\property\transport_fleet\rules_and_agreements
   - match: name_contains
     values: ["personal_invoice","personal_receipt", "personal_quote"]
-    dest: C:\Users\Sebbi Kankondi\Documents\Admin\finance
+    dest: C:\Users\SebbyKa\Documents\Admin\finance
   - match: name_contains
-    values: ["most_accommodation","most_Itinerary", "most_travel", "most_claims"]
-    dest: C:\Users\Sebbi Kankondi\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\admin
+    values: ["most_accommodation","most_Itinerary", 
+      "most_travel", "most_claims", "most_indemnity"]
+    dest: C:\Users\SebbyKa\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\admin
+  - match: name_contains
+    values: ["most_equipment"]
+    dest: C:\Users\SebbyKa\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\equipment
+  - match: name_contains
+    values: ["most_design"]
+    dest: C:\Users\SebbyKa\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\study_design
   - match: name_contains
     values: ["most_read"]
-    dest: C:\Users\Sebbi Kankondi\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\reading_pdfs
+    dest: C:\Users\SebbyKa\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\reading_pdfs
   # Generic extension-based fallbacks run after keyword rules for uncategorized files.
   - match: extension
     values: ["jpg", "jpeg", "png", "heic"]
