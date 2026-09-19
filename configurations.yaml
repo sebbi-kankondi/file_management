@@ -245,6 +245,9 @@ rules:
     values: ["jpg", "jpeg", "png", "heic"]
     dest: ~/Pictures
   - match: extension
+    values: ["exe"]
+    dest: C:\Users\Sebbi Kankondi\Desktop\important_installers
+  - match: extension
     values: ["zip", "rar", "7z", "tar", "gz"]
     dest: ~/Archives
   - match: extension
