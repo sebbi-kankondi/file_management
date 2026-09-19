@@ -6,10 +6,17 @@ rules:
   # Procurement document routing: explicit keyword rules map known forms to their working folders.
   - match: name_contains
     values: ["g_invoice"]
+<<<<<<< HEAD
     dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_invoice\goods
   - match: name_contains
     values: ["s_invoice"]
     dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\general_invoice\service
+=======
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_invoice\goods
+  - match: name_contains
+    values: ["s_invoice"]
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\general_invoice\service
+>>>>>>> fd58916de5b1639c03c2bb4f0c1bd9bab2ac9f71
   - match: name_contains
     values: ["_policy", "_act"]
     dest: C:\Users\SebbyKa\Documents\NNMA\high_level_documents\acts_and_policies
@@ -158,7 +165,11 @@ rules:
   - match: name_contains
     values: ["accredited_institutes", "course_outline", "course_brochure", "application_form", "course_fee",
      "course_calendar", "training_notes", "training_report", "training_present", "skills_list"]
+<<<<<<< HEAD
     dest: C:\Users\SebbyKa\Documents\NNMA\Procurement\Training
+=======
+    dest: C:\Users\Sebbi Kankondi\Documents\NNMA\Procurement\Training
+>>>>>>> fd58916de5b1639c03c2bb4f0c1bd9bab2ac9f71
   - match: name_contains
     values: ["lssplumbing_s_list", "genplumbing_s_list", "pump_s_list", "clean_equip_s_list",
      "diving_gear_s_list", "training_specs", "transport_specs", "hvac_specs", "generator_specs",
@@ -215,6 +226,9 @@ rules:
     values: ["business_registration"]
     dest: C:\Users\SebbyKa\Documents\Admin\business_docs\registration
   - match: name_contains
+    values: ["business_registration"]
+    dest: C:\Users\Sebbi Kankondi\Documents\Admin\business_docs\registration
+  - match: name_contains
     values: ["_pension"]
     dest: C:\Users\SebbyKa\Documents\Admin\business_docs\staff  
   - match: name_contains
@@ -230,6 +244,7 @@ rules:
   - match: name_contains
     values: ["most_accommodation","most_Itinerary", 
       "most_travel", "most_claims", "most_indemnity"]
+<<<<<<< HEAD
     dest: C:\Users\SebbyKa\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\admin
   - match: name_contains
     values: ["most_equipment"]
@@ -237,6 +252,15 @@ rules:
   - match: name_contains
     values: ["most_design"]
     dest: C:\Users\SebbyKa\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\study_design
+=======
+    dest: C:\Users\Sebbi Kankondi\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\admin
+>>>>>>> fd58916de5b1639c03c2bb4f0c1bd9bab2ac9f71
+  - match: name_contains
+    values: ["most_equipment"]
+    dest: C:\Users\Sebbi Kankondi\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\equipment
+  - match: name_contains
+    values: ["most_design"]
+    dest: C:\Users\Sebbi Kankondi\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\study_design
   - match: name_contains
     values: ["most_read"]
     dest: C:\Users\SebbyKa\Desktop\Academic\collaborations\coastal_biogeography_genomic_basis_of_heat_tolerance\reading_pdfs
@@ -244,6 +268,9 @@ rules:
   - match: extension
     values: ["jpg", "jpeg", "png", "heic"]
     dest: ~/Pictures
+  - match: extension
+    values: ["exe"]
+    dest: C:\Users\Sebbi Kankondi\Desktop\important_installers
   - match: extension
     values: ["zip", "rar", "7z", "tar", "gz"]
     dest: ~/Archives
